@@ -21,14 +21,14 @@ class EquipoEventosController < InheritedResources::Base
 
 		respond_to do |format|
       	if eqev.save
-    newAuditoria = Auditoria.new
-    newAuditoria.tabla = params[:controller]
-    newAuditoria.action = params[:action]
-    newAuditoria.usuario =  User.all.first.id
-    newAuditoria.clave = eqev.id
-    newAuditoria.save
+          newAuditoria = Auditoria.new
+          newAuditoria.tabla = params[:controller]
+          newAuditoria.action = params[:action]
+          newAuditoria.usuario =  User.all.first.id
+          newAuditoria.clave = eqev.id
+          newAuditoria.save
 
-    	    format.html { redirect_to @equipo, notice: 'Relación creada exitosamente' }
+    	    format.html { redirect_to @equipo, notice: 'Relacion creada exitosamente' }
         	format.json { render json: @equipo, status: :created, location: @equipo }
      	 else
  	       format.html { render action: "equipo/"+@equipo.id }
