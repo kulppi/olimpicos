@@ -1,0 +1,37 @@
+<%= form_for(@estadio) do |f| %>
+  <% if @estadio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@estadio.errors.count, "error") %> prohibited this estadio from being saved:</h2>
+
+      <ul>
+      <% @estadio.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br />
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :cordx %><br />
+    <%= f.number_field :cordx %>
+  </div>
+  <div class="field">
+    <%= f.label :cordy %><br />
+    <%= f.number_field :cordy %>
+  </div>
+  <div class="field">
+    <%= f.label "Olimpiada"%><br />
+    <%= f.select :olimpiada_id, Olimpiada.order('Lugar ASC').all.map {|r| [r.lugar,r.id] } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

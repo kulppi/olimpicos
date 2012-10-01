@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<h1> Equipo</h1>
+<p>
+  <b>Delegacion:</b>
+  <%= @equipo.delegacion_id %>
+</p>
+
+<p>
+  <b>Disciplina:</b>
+  <%= @equipo.disciplina_id %>
+</p>
+
+
+<%= render 'addPlayer' %>
+
+<%= link_to 'Edit', edit_equipo_path(@equipo) %> |
+<%= link_to 'Back', equipos_path %>

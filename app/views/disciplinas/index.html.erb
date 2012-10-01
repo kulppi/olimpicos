@@ -1,0 +1,37 @@
+<h1>Listado de disciplinas</h1>
+
+<table class="table">
+  <tr>
+    <th>Deporte</th>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Jugadoresporequipo</th>
+    <th>Participantes</th>
+    <th>Minutosportiempo</th>
+    <th>Cantidaddetiempos</th>
+    <th>Sector</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @disciplinas.each do |disciplina| %>
+  <tr>
+    <td><%= disciplina.deporte_id %></td>
+    <td><%= disciplina.nombre %></td>
+    <td><%= disciplina.descripcion %></td>
+    <td><%= disciplina.jugadoresPorEquipo %></td>
+    <td><%= disciplina.participantes %></td>
+    <td><%= disciplina.minutosPorTiempo %></td>
+    <td><%= disciplina.cantidadDeTiempos %></td>
+    <td><%= disciplina.sector_id %></td>
+    <td><%= link_to 'Show', disciplina %></td>
+    <td><%= link_to 'Edit', edit_disciplina_path(disciplina) %></td>
+    <td><%= link_to 'Destroy', disciplina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Disciplina', new_disciplina_path %>

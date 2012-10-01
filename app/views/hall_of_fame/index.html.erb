@@ -1,0 +1,19 @@
+
+
+<h1>Salon de la Fama</h1>
+
+<table class="table">
+  <tr>
+    <th>Nombre</th>
+    <th>Nacionalidad</th>
+    <th>Medallas de Oros</th>
+  </tr>
+
+<% @jugadores.each do |jugadore| %>
+  <tr>
+    <td><%= jugadore.nombre %></td>
+    <td><%= jugadore.pais %></td>
+    <td><%= jugadore.numOro %></td>
+  </tr>
+<% end %>
+</table>

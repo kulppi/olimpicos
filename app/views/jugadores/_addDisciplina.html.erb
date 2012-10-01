@@ -1,0 +1,36 @@
+<table class="table">
+  <tr>
+    <th>Disciplina</th>
+    <th>Deporte</th>
+    <th></th>
+    <th></th>
+    </tr>
+<%  @disIn.each do |disci| %>
+  <tr>
+    <td><%= disci.nombre %></td>
+    <td><%= disci.deporte_id %></td>
+    <td><%= link_to 'Ver', disci %></td>
+    <% temp = JugadoresDisciplinas.where('jugadore_id = ? AND disciplina_id = ?',@jugadore.id, disci.id ).first.id  %>
+    <td><%= link_to 'Retirar',  retirar_disciplina_path( :id => temp)  ,  data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<p> Agregar </p>
+
+<table class="table">
+  <tr>
+    <th>Disciplina</th>
+    <th>Deporte</th>
+    <th></th>
+    </tr>
+
+<% @dis.each do |di| %>
+  <tr>
+    <td><%= di.nombre %></td>
+    <td><%= di.deporte_id%></td>
+    <td><%= link_to 'Agregar Disciplina', agregar_disciplina_path(:jugadores => @jugadore.id , :disciplina => di.id ) %></td>
+  </tr>
+<% end %>
+</table>

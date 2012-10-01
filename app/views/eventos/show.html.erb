@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Disciplina:</b>
+  <%= @evento.disciplina_id %>
+</p>
+
+<p>
+  <b>Fecha inicio:</b>
+  <%= @evento.fecha_inicio %>
+</p>
+
+<p>
+  <b>Fecha termino:</b>
+  <%= @evento.fecha_termino %>
+</p>
+
+<p>
+  <b>Sector:</b>
+  <%= @evento.sector_id %>
+</p>
+
+<p>
+  <b>Serie:</b>
+  <%= @evento.serie %>
+</p>
+
+<p>
+  <b>Siguienteevento:</b>
+  <%= @evento.siguienteEvento_id %>
+</p>
+
+
+<%= render 'addPlayer' %>
+
+<%= link_to 'Edit', edit_evento_path(@evento) %> |
+<%= link_to 'Back', eventos_path %>

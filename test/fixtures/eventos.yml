@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+
+  created_at: 2014-09-09 00-00-00
+  updated_at: 2014-09-09 00-00-00
+  disciplina_id: 1
+  fecha_inicio: 2012-09-29
+  fecha_termino: 2012-09-29
+  sector_id: 1
+  serie: 1
+  siguienteEvento_id: 1
+
+two:
+
+  created_at: 2014-09-09 00-00-00
+  updated_at: 2014-09-09 00-00-00
+  disciplina_id: 1
+  fecha_inicio: 2012-09-29
+  fecha_termino: 2012-09-29
+  sector_id: 1
+  serie: 1
+  siguienteEvento_id: 1

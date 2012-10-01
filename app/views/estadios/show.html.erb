@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @estadio.nombre %>
+</p>
+
+<p>
+  <b>Direccion:</b>
+  <%= @estadio.direccion %>
+</p>
+
+<p>
+  <b>Cordx:</b>
+  <%= @estadio.cordx %>
+</p>
+
+<p>
+  <b>Cordy:</b>
+  <%= @estadio.cordy %>
+</p>
+
+<p>
+  <b>Olipiada:</b>
+  <%= @estadio.olipiada_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_estadio_path(@estadio) %> |
+<%= link_to 'Back', estadios_path %>

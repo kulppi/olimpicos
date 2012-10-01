@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Deporte:</b>
+  <%= @disciplina.deporte_id %>
+</p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @disciplina.nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @disciplina.descripcion %>
+</p>
+
+<p>
+  <b>Jugadoresporequipo:</b>
+  <%= @disciplina.jugadoresPorEquipo %>
+</p>
+
+<p>
+  <b>Participantes:</b>
+  <%= @disciplina.participantes %>
+</p>
+
+<p>
+  <b>Minutosportiempo:</b>
+  <%= @disciplina.minutosPorTiempo %>
+</p>
+
+<p>
+  <b>Cantidaddetiempos:</b>
+  <%= @disciplina.cantidadDeTiempos %>
+</p>
+
+<p>
+  <b>Sector:</b>
+  <%= @disciplina.sector_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_disciplina_path(@disciplina) %> |
+<%= link_to 'Back', disciplinas_path %>

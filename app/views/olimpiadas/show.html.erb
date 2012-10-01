@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ano:</b>
+  <%= @olimpiada.ano %>
+</p>
+
+<p>
+  <b>Lugar:</b>
+  <%= @olimpiada.lugar %>
+</p>
+
+<p>
+  <b>Fecha inicio:</b>
+  <%= @olimpiada.fecha_inicio %>
+</p>
+
+<p>
+  <b>Fecha termino:</b>
+  <%= @olimpiada.fecha_termino %>
+</p>
+
+
+<%= link_to 'Edit', edit_olimpiada_path(@olimpiada) %> |
+<%= link_to 'Back', olimpiadas_path %>

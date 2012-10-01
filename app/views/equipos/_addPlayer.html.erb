@@ -1,0 +1,38 @@
+<p> Jugadores en el Equipo </p>
+
+<table class="table">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th></th>
+    <th></th>
+    </tr>
+<% @jugadoresIn.each do |jugadore| %>
+  <tr>
+    <td><%= jugadore.nombre %></td>
+    <td><%= jugadore.apellido %></td>
+    <td><%= link_to 'Ver', jugadore %></td>
+    <td><%= link_to 'Retirar', delete_jugadoresequipos_path(:equipos => @equipo.id , :jugadores =>jugadore.id ),  data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<p> Agregar </p>
+
+<table class="table">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th></th>
+    </tr>
+
+<% @jugadores.each do |jugadore| %>
+  <tr>
+    <td><%= jugadore.nombre %></td>
+    <td><%= jugadore.apellido %></td>
+    <td><%= link_to 'Agregar Jugador', new_jugadoresequipos_path(:equipos => @equipo.id , :jugadores =>jugadore.id ) %></td>
+  </tr>
+<% end %>
+</table>
+￼

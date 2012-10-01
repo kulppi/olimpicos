@@ -1,0 +1,21 @@
+<h1>Auditoria</h1>
+
+<table class="table">
+  <tr>
+    <th>Usuario</th>
+    <th>Tabla</th>
+    <th>accion</th>
+    <th>clave involucrada</th>
+    <th>Fecha</th>
+    </tr>
+<%  @auts.each do |aut| %>
+  <tr>
+    <td><%= aut.usuario %></td>
+    <td><%= aut.tabla %></td>
+    <td><%= aut.action %></td>
+    <td><%= aut.clave %></td>
+    <td><%= aut.created_at %></td>
+  </tr>
+<% end %>
+</table>
+

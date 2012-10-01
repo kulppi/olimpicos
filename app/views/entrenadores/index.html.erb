@@ -1,0 +1,35 @@
+<h1>Listado de entrenadores</h1>
+
+<table class="table">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Fecha nacimiento</th>
+    <th>Edad</th>
+    <th>Tipo sexo</th>
+    <th>Nacionalidad</th>
+    <th>Delegacion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @entrenadores.each do |entrenadore| %>
+  <tr>
+    <td><%= entrenadore.nombre %></td>
+    <td><%= entrenadore.apellido %></td>
+    <td><%= entrenadore.fecha_nacimiento %></td>
+    <td><%= entrenadore.edad %></td>
+    <td><%= entrenadore.tipo_sexo_id %></td>
+    <td><%= entrenadore.nacionalidad %></td>
+    <td><%= entrenadore.delegacion_id %></td>
+    <td><%= link_to 'Show', entrenadore %></td>
+    <td><%= link_to 'Edit', edit_entrenadore_path(entrenadore) %></td>
+    <td><%= link_to 'Destroy', entrenadore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Entrenadore', new_entrenadore_path %>

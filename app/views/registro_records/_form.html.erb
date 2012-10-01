@@ -1,0 +1,37 @@
+<%= form_for(@registro_record) do |f| %>
+  <% if @registro_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registro_record.errors.count, "error") %> prohibited this registro_record from being saved:</h2>
+
+      <ul>
+      <% @registro_record.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Deporte"%><br />
+    <%= f.select :deporte_id, Deporte.order('Nombre ASC').all.map {|r| [r.nombre,r.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label "Disciplina" %><br />
+    <%= f.select :disciplina_id, Disciplina.order('nombre ASC').all.map {|r| [r.nombre,r.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label "Evento"%><br />
+    <%= f.select :evento_id , Evento.order('disciplina_id ASC').all.map {|r| [ r.id ,r.id] }%>
+  </div>
+  <div class="field">
+    <%= f.label "Jugador" %><br />
+    <%= f.select :jugador_id, Jugadore.order('nombre ASC').all.map {|r| [r.nombre,r.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label :marca %><br />
+    <%= f.number_field :marca %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

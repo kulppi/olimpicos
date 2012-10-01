@@ -1,0 +1,31 @@
+<h1>Listado de registro_records</h1>
+
+<table class="table">
+  <tr>
+    <th>Deporte</th>
+    <th>Disciplina</th>
+    <th>Evento</th>
+    <th>Jugador</th>
+    <th>Marca</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @registro_records.each do |registro_record| %>
+  <tr>
+    <td><%= registro_record.deporte_id %></td>
+    <td><%= registro_record.disciplina_id %></td>
+    <td><%= registro_record.evento_id %></td>
+    <td><%= registro_record.jugador_id %></td>
+    <td><%= registro_record.marca %></td>
+    <td><%= link_to 'Show', registro_record %></td>
+    <td><%= link_to 'Edit', edit_registro_record_path(registro_record) %></td>
+    <td><%= link_to 'Destroy', registro_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Registro record', new_registro_record_path %>

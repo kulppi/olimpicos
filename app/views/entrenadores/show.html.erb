@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @entrenadore.nombre %>
+</p>
+
+<p>
+  <b>Apellido:</b>
+  <%= @entrenadore.apellido %>
+</p>
+
+<p>
+  <b>Fecha nacimiento:</b>
+  <%= @entrenadore.fecha_nacimiento %>
+</p>
+
+<p>
+  <b>Edad:</b>
+  <%= @entrenadore.edad %>
+</p>
+
+<p>
+  <b>Tipo sexo:</b>
+  <%= @entrenadore.tipo_sexo_id %>
+</p>
+
+<p>
+  <b>Nacionalidad:</b>
+  <%= @entrenadore.nacionalidad %>
+</p>
+
+<p>
+  <b>Delegacion:</b>
+  <%= @entrenadore.delegacion_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_entrenadore_path(@entrenadore) %> |
+<%= link_to 'Back', entrenadores_path %>

@@ -1,0 +1,53 @@
+<%= form_for(@disciplina) do |f| %>
+  <% if @disciplina.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@disciplina.errors.count, "error") %> prohibited this disciplina from being saved:</h2>
+
+      <ul>
+      <% @disciplina.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Deporte"%><br />
+    <%= f.select :deporte_id, Deporte.order('Nombre ASC').all.map {|r| [r.nombre,r.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br />
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :jugadoresPorEquipo %><br />
+    <%= f.number_field :jugadoresPorEquipo %>
+  </div>
+  <div class="field">
+    <%= f.label :participantes %><br />
+    <%= f.number_field :participantes %>
+  </div>
+  <div class="field">
+    <%= f.label :minutosPorTiempo %><br />
+    <%= f.number_field :minutosPorTiempo %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidadDeTiempos %><br />
+    <%= f.number_field :cantidadDeTiempos %>
+  </div>
+  <div class="field">
+    <%= f.label "Sector" %><br />
+    <%= f.select :sector_id, Sectore.order('nombre ASC').all.map {|r| [r.nombre,r.id] }  %>
+  </div>
+  <div class="field">
+    <%= f.label "Escala" %><br />
+    <%= f.select :escala_id, TipoEscala.order('tipo_escala ASC').all.map {|r| [r.tipo_escala,r.id] }  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

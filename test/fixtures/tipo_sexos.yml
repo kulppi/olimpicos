@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+
+  created_at: 2014-09-09 00-00-00
+  updated_at: 2014-09-09 00-00-00
+  tipo_sexo: Masculino
+
+two:
+
+  created_at: 2014-09-09 00-00-00
+  updated_at: 2014-09-09 00-00-00
+  tipo_sexo: Femenino

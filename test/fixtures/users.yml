@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  full_name: Antti kulppi 
+  email: antti@brainshots
+  phone: 9999
+  description: programador
+  password_hash: MyString
+  password_salt: MyString
+  country_id: 1
+  active: true
+  city_id: 1
+  gender: 1
+  image: MyString
+  active: true

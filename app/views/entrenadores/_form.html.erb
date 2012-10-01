@@ -1,0 +1,45 @@
+<%= form_for(@entrenadore) do |f| %>
+  <% if @entrenadore.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entrenadore.errors.count, "error") %> prohibited this entrenadore from being saved:</h2>
+
+      <ul>
+      <% @entrenadore.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido %><br />
+    <%= f.text_field :apellido %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_nacimiento %><br />
+    <%= f.date_select :fecha_nacimiento %>
+  </div>
+  <div class="field">
+    <%= f.label :edad %><br />
+    <%= f.number_field :edad %>
+  </div>
+  <div class="field">
+    <%= f.label "Sexo" %><br />
+    <%= f.select :tipo_sexo_id, TipoSexo.order('tipo_sexo ASC').all.map {|r| [r.tipo_sexo,r.id] }  %>
+  </div>
+  <div class="field">
+    <%= f.label :nacionalidad %><br />
+    <%= f.text_field :nacionalidad %>
+  </div>
+  <div class="field">
+    <%= f.label "Delegacion"%><br />
+    <%= f.select :delegacion_id, Delegacione.order('pais ASC').all.map {|r| [r.pais,r.id] } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

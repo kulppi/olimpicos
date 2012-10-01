@@ -1,0 +1,29 @@
+<%= form_for(@medalla) do |f| %>
+  <% if @medalla.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@medalla.errors.count, "error") %> prohibited this medalla from being saved:</h2>
+
+      <ul>
+      <% @medalla.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Medalla"%><br />
+    <%= f.select :tipo_medalla_id, TipoMedalla.order('tipo_medalla ASC').all.map {|r| [r.tipo_medalla,r.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label "Disciplina" %><br />
+    <%= f.select :disciplina_id, Disciplina.order('nombre ASC').all.map {|r| [r.nombre,r.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label "Jugador" %><br />
+    <%= f.select :jugador_id, Jugadore.order('nombre ASC').all.map {|r| [r.nombre,r.id] } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

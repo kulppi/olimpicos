@@ -1,0 +1,27 @@
+<%= form_for(@equipo) do |f| %>
+  <% if @equipo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@equipo.errors.count, "error") %> prohibited this equipo from being saved:</h2>
+
+      <ul>
+      <% @equipo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Delegacion"%><br />
+    <%= f.select :delegacion_id, Delegacione.order('pais ASC').all.map {|r| [r.pais,r.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label "Disciplina" %><br />
+    <%= f.select :disciplina_id, Disciplina.order('nombre ASC').all.map {|r| [r.nombre,r.id] } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+

@@ -1,0 +1,77 @@
+<p> Participantes del evento </p>
+
+<P>  <%= @disciplina.nombre %></p>
+<table class="table">
+  <tr>
+  <% if @disciplina.jugadoresPorEquipo == 1 %>
+    <th>Nombre</th>
+    <th>Apellido</th>
+  <% end %>
+    <th>Pais</th>
+    <th>Marca</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    </tr>
+<%  @jugadoresIn.each do |jugadore| 
+  temp = 0%>
+  <tr>
+  <% if @disciplina.jugadoresPorEquipo == 1 %>
+    <td><%= jugadore.nombre %></td>
+    <td><%= jugadore.apellido %></td>
+  <% end %>
+    <td><%= jugadore.id %></td>
+    <td><% jugadore.equipo_eventos.each do |ee| %>
+      <%if ee.evento_id == @evento.id %>
+      <input id="marca<%= ee.id %>"  value="<%= ee.evento_id == @evento.id  ?  ee.marca : nil %>" name="marca" >
+      <% temp = ee.id %>
+      <% end %>
+     <% end %></td>
+    <td><%= link_to 'Ver', jugadore %></td>
+    <td class="change" href='#' id="<%= temp %>"><%=  'Actulizar Marca' %></td>
+    <td><%= link_to 'Retirar',  delete_membereventos_path(:player => jugadore.id , :id =>@evento.id )  ,  data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<p> Agregar </p>
+
+<table class="table">
+  <tr>
+  <% if @disciplina.jugadoresPorEquipo == 1 %>
+    <th>Nombre</th>
+    <th>Apellido</th>
+  <% end %>
+    <th>Pais</th>
+    <th></th>
+    </tr>
+
+<% @jugadores.each do |jugadore| %>
+  <tr>
+  <% if @disciplina.jugadoresPorEquipo == 1 %>
+    <td><%= jugadore.nombre %></td>
+    <td><%= jugadore.apellido %></td>
+  <% end %>
+    <td><%= jugadore.id %></td>
+
+    <td><%= link_to 'Agregar Jugador', new_membereventos_path(:player => jugadore.id , :id =>@evento.id ) %></td>
+  </tr>
+<% end %>
+</table>
+
+<script language="javascript" type="text/javascript">
+    
+    $(document).ready(function() {
+      
+        $('.change').click(function(e) {
+            e.preventDefault();
+            window.location ='/eventos/marca/'+'<%= @evento.id  %>/'+$(this).attr('id')+'/'+$('#marca'+$(this).attr('id')).attr('value');
+            
+        });
+
+                  
+    });
+
+</script>
+￼

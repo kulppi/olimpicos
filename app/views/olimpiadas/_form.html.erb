@@ -1,0 +1,33 @@
+<%= form_for(@olimpiada) do |f| %>
+  <% if @olimpiada.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@olimpiada.errors.count, "error") %> prohibited this olimpiada from being saved:</h2>
+
+      <ul>
+      <% @olimpiada.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ano %><br />
+    <%= f.date_select :ano %>
+  </div>
+  <div class="field">
+    <%= f.label :lugar %><br />
+    <%= f.text_area :lugar %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_inicio %><br />
+    <%= f.date_select :fecha_inicio %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_termino %><br />
+    <%= f.date_select :fecha_termino %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

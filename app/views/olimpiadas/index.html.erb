@@ -1,0 +1,29 @@
+<h1>Listado de olimpiadas</h1>
+
+<table class="table">
+  <tr>
+    <th>Ano</th>
+    <th>Lugar</th>
+    <th>Fecha inicio</th>
+    <th>Fecha termino</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @olimpiadas.each do |olimpiada| %>
+  <tr>
+    <td><%= olimpiada.ano %></td>
+    <td><%= olimpiada.lugar %></td>
+    <td><%= olimpiada.fecha_inicio %></td>
+    <td><%= olimpiada.fecha_termino %></td>
+    <td><%= link_to 'Show', olimpiada %></td>
+    <td><%= link_to 'Edit', edit_olimpiada_path(olimpiada) %></td>
+    <td><%= link_to 'Destroy', olimpiada, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Olimpiada', new_olimpiada_path %>

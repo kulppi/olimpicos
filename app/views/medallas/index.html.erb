@@ -1,0 +1,27 @@
+<h1>Listado de medallas</h1>
+
+<table class="table">
+  <tr>
+    <th>Tipo medalla</th>
+    <th>Disciplina</th>
+    <th>Jugador</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @medallas.each do |medalla| %>
+  <tr>
+    <td><%= medalla.tipo_medalla_id %></td>
+    <td><%= medalla.disciplina_id %></td>
+    <td><%= medalla.jugador_id %></td>
+    <td><%= link_to 'Show', medalla %></td>
+    <td><%= link_to 'Edit', edit_medalla_path(medalla) %></td>
+    <td><%= link_to 'Destroy', medalla, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Medalla', new_medalla_path %>

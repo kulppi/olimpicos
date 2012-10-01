@@ -1,0 +1,25 @@
+<%= form_for(@delegacione) do |f| %>
+  <% if @delegacione.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@delegacione.errors.count, "error") %> prohibited this delegacione from being saved:</h2>
+
+      <ul>
+      <% @delegacione.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pais %><br />
+    <%= f.text_area :pais %>
+  </div>
+  <div class="field">
+    <%= f.label "Olimpiada"%><br />
+    <%= f.select :olimpiada_id, Olimpiada.order('Lugar ASC').all.map {|r| [r.lugar,r.id] } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

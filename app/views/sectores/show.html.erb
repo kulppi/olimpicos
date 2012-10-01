@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @sectore.nombre %>
+</p>
+
+<p>
+  <b>Estadio:</b>
+  <%= @sectore.estadio_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_sectore_path(@sectore) %> |
+<%= link_to 'Back', sectores_path %>

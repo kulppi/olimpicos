@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Deporte:</b>
+  <%= @registro_record.deporte_id %>
+</p>
+
+<p>
+  <b>Disciplina:</b>
+  <%= @registro_record.disciplina_id %>
+</p>
+
+<p>
+  <b>Evento:</b>
+  <%= @registro_record.evento_id %>
+</p>
+
+<p>
+  <b>Jugador:</b>
+  <%= @registro_record.jugador_id %>
+</p>
+
+<p>
+  <b>Marca:</b>
+  <%= @registro_record.marca %>
+</p>
+
+
+<%= link_to 'Edit', edit_registro_record_path(@registro_record) %> |
+<%= link_to 'Back', registro_records_path %>

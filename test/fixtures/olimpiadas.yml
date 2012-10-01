@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ano: 2012-09-29
+  lugar: Chile
+  fecha_inicio: 2012-09-29
+  fecha_termino: 2012-09-29

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tipo medalla:</b>
+  <%= @medalla.tipo_medalla_id %>
+</p>
+
+<p>
+  <b>Disciplina:</b>
+  <%= @medalla.disciplina_id %>
+</p>
+
+<p>
+  <b>Jugador:</b>
+  <%= @medalla.jugador_id %>
+</p>
+
+<%= link_to 'Edit', edit_medalla_path(@medalla) %> |
+<%= link_to 'Back', medallas_path %>

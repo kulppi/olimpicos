@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @jugadore.nombre %>
+</p>
+
+<p>
+  <b>Apellido:</b>
+  <%= @jugadore.apellido %>
+</p>
+
+<p>
+  <b>Fecha nacimiento:</b>
+  <%= @jugadore.fecha_nacimiento %>
+</p>
+
+<p>
+  <b>Peso:</b>
+  <%= @jugadore.peso %>
+</p>
+
+<p>
+  <b>Altura:</b>
+  <%= @jugadore.altura %>
+</p>
+
+<p>
+  <b>Edad:</b>
+  <%= @jugadore.edad %>
+</p>
+
+<p>
+  <b>Tipo sexo:</b>
+  <%= @jugadore.tipo_sexo_id %>
+</p>
+
+<p>
+  <b>Nacionalidad:</b>
+  <%= @jugadore.nacionalidad %>
+</p>
+
+<p>
+  <b>Delegacion:</b>
+  <%= @jugadore.delegacion_id %>
+</p>
+
+
+<%= render 'addDisciplina' %>
+
+<%= link_to 'Edit', edit_jugadore_path(@jugadore) %> |
+<%= link_to 'Back', jugadores_path %>

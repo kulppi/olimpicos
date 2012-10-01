@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+
+  created_at: 2014-09-09 00-00-00
+  updated_at: 2014-09-09 00-00-00
+  deporte_id: 1
+  nombre: mixto futbol
+  descripcion: divertido
+  jugadoresPorEquipo: 2
+  participantes: 8
+  minutosPorTiempo: 45
+  cantidadDeTiempos: 2
+  sector_id: 1
+
+two:
+
+  created_at: 2014-09-09 00-00-00
+  updated_at: 2014-09-09 00-00-00
+  deporte_id: 2
+  nombre: baskeet
+  descripcion: manoanoanoa
+  jugadoresPorEquipo: 5
+  participantes: 2
+  minutosPorTiempo: 15
+  cantidadDeTiempos: 4
+  sector_id: 2

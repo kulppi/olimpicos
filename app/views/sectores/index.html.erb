@@ -1,0 +1,25 @@
+<h1>Listado de sectores</h1>
+
+<table class="table">
+  <tr>
+    <th>Nombre</th>
+    <th>Estadio</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sectores.each do |sectore| %>
+  <tr>
+    <td><%= sectore.nombre %></td>
+    <td><%= sectore.estadio_id %></td>
+    <td><%= link_to 'Show', sectore %></td>
+    <td><%= link_to 'Edit', edit_sectore_path(sectore) %></td>
+    <td><%= link_to 'Destroy', sectore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sectore', new_sectore_path %>
