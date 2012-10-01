@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001043926) do
+ActiveRecord::Schema.define(:version => 20121001144759) do
 
   create_table "auditoria", :force => true do |t|
     t.string   "tabla"
@@ -210,7 +210,6 @@ ActiveRecord::Schema.define(:version => 20121001043926) do
     t.string   "password_hash"
     t.string   "password_salt"
     t.integer  "country_id"
-    t.boolean  "active"
     t.integer  "city_id"
     t.integer  "gender"
     t.string   "image"
