@@ -1,7 +1,5 @@
 Olimpicos::Application.routes.draw do
  
-  get "auditoria/index"
-
   resources :users
 
   resources :deportes
