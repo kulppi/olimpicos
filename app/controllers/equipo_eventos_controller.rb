@@ -1,4 +1,4 @@
-class EquipoEventosController < InheritedResources::Base
+class EquipoEventosController < ApplicationController
 
 	def destroy
 		ee = EquipoEventos.find(params[:id])
@@ -10,7 +10,7 @@ class EquipoEventosController < InheritedResources::Base
     newAuditoria.clave = ee.id
     newAuditoria.save
     
-		EquipoEventos.delete(ee)
+		ee.delete
 		return render :nothing => true
 	end
 
