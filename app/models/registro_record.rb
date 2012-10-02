@@ -6,4 +6,6 @@ class RegistroRecord < ActiveRecord::Base
   belongs_to :evento
   belongs_to :jugadore, :class_name => "jugadore", :foreign_key => "jugador_id"
 
+  
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121002153922) do
+ActiveRecord::Schema.define(:version => 20121002202631) do
 
   create_table "auditoria", :force => true do |t|
     t.string   "tabla"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20121002153922) do
     t.integer  "sector_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
-    t.integer  "escala_id"
+    t.integer  "tipo_escala_id"
   end
 
   create_table "entrenadores", :force => true do |t|
@@ -165,11 +165,11 @@ ActiveRecord::Schema.define(:version => 20121002153922) do
     t.integer  "disciplina_id"
     t.integer  "evento_id"
     t.integer  "jugador_id"
-    t.integer  "marca"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.integer  "tipo_record_id"
     t.integer  "equipo_id"
+    t.float    "marca"
   end
 
   create_table "sectores", :force => true do |t|

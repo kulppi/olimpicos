@@ -196,7 +196,7 @@ class EventosController < ApplicationController
     newAuditoria.clave = @evento.id
     newAuditoria.save
 
-rr = RegistroRecord.where("deporte_id = ? AND disciplina_id = ?", disciplina.deporte_id, disciplina.id).first_or_create( :evento_id => @evento.id)
+rr = RegistroRecord.where("deporte_id = ? AND disciplina_id = ?", disciplina.deporte_id, disciplina.id).first_or_create( :evento_id => @evento.id, :marca => (disciplina.tipo_escala_id == TipoEscala.where('tipo_escala = ?','Asc').first.id ? 0.0 : 99999.99) )
       
     if disciplina.jugadoresPorEquipo == 1
       je = JugadoresEventos.find(params[:id])
@@ -212,8 +212,9 @@ rr = RegistroRecord.where("deporte_id = ? AND disciplina_id = ?", disciplina.dep
     je.save
 
 
+        rr.save
 ##actualizar registros
-      if rr.marca.nil? | (je.marca > rr.marca & disciplina.tipo_escalas.tipo_escala == 'Asc') | (je.marca < rr.marca & disciplina.tipo_escalas.tipo_escala == 'Desc')
+      if rr.marca.nil? 
         rr.marca = je.marca
         rr.evento = @evento.id
         rr.save

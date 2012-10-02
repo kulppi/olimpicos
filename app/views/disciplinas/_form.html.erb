@@ -45,7 +45,7 @@
   </div>
   <div class="field">
     <%= f.label "Escala" %><br />
-    <%= f.select :escala_id, TipoEscala.order('tipo_escala ASC').all.map {|r| [r.tipo_escala,r.id] }  %>
+    <%= f.select :tipo_escala_id, TipoEscala.order('tipo_escala ASC').all.map {|r| [r.tipo_escala,r.id] }  %>
   </div>
   <div class="actions">
     <%= f.submit %>
