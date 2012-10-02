@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001144759) do
+ActiveRecord::Schema.define(:version => 20121002153922) do
 
   create_table "auditoria", :force => true do |t|
     t.string   "tabla"
@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(:version => 20121001144759) do
     t.integer  "evento_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.float    "marca"
   end
 
   create_table "medallas", :force => true do |t|

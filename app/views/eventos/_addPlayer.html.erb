@@ -21,7 +21,8 @@
     <td><%= jugadore.apellido %></td>
   <% end %>
     <td><%= jugadore.id %></td>
-    <td><% jugadore.equipo_eventos.each do |ee| %>
+    <td><% @disciplina.jugadoresPorEquipo == 1 ? group = JugadoresEventos.where('jugadore_id = ? AND evento_id = ? ', jugadore.id, @evento.id).all : group = jugadore.equipo_eventos
+     group.each do |ee| %>
       <%if ee.evento_id == @evento.id %>
       <input id="marca<%= ee.id %>"  value="<%= ee.evento_id == @evento.id  ?  ee.marca : nil %>" name="marca" >
       <% temp = ee.id %>

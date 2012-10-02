@@ -6,11 +6,13 @@ class Jugadore < ActiveRecord::Base
   belongs_to :delegacione, :class_name => "delegacione", :foreign_key => "delegacion_id"
   
   has_and_belongs_to_many :equipos
-  has_and_belongs_to_many :eventos
 
 
   has_many :disciplinas, :through => :jugadores_disciplinas
   has_many :jugadores_disciplinas
+
+  has_many :eventos, :through => :jugadores_eventos
+  has_many :jugadores_eventos
 
   has_many :medallas
   has_many :registro_records

@@ -196,7 +196,7 @@ class EventosController < ApplicationController
     newAuditoria.clave = @evento.id
     newAuditoria.save
 
-rr = RegistroRecord.where("deporte_id = ? AND disciplina_id = ?").first_or_create( :evento_id => @evento.id)
+rr = RegistroRecord.where("deporte_id = ? AND disciplina_id = ?", disciplina.deporte_id, disciplina.id).first_or_create( :evento_id => @evento.id)
       
     if disciplina.jugadoresPorEquipo == 1
       je = JugadoresEventos.find(params[:id])

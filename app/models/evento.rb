@@ -5,7 +5,9 @@ class Evento < ActiveRecord::Base
   belongs_to :disciplina
   belongs_to :sectore, :class_name => "sectore", :foreign_key => "sector_id"
 
-  has_and_belongs_to_many :jugadores
+
+  has_many :jugadores, :through => :jugadores_eventos
+  has_many :jugadores_eventos
 
   has_many :equipos, :through => :equipo_eventos
   has_many :equipo_eventos
