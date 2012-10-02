@@ -97,7 +97,7 @@ class DisciplinasController < ApplicationController
     newAuditoria.clave = @disciplina.id
     newAuditoria.save
 
-    JugadoresDisciplina.where('jugadores_disciplinas.disciplina_id = ?', @disciplina.id).each do |y|
+    JugadoresDisciplinas.where('jugadores_disciplinas.disciplina_id = ?', @disciplina.id).each do |y|
 
       y.destroy
     end

@@ -103,7 +103,7 @@ class EquiposController < ApplicationController
       y.destroy
     end
 
-    JugadoresEquipo.where('jugadores_equipos.equipo_id = ?', @equipo.id).each do |y|
+    JugadoresEquipos.where('jugadores_equipos.equipo_id = ?', @equipo.id).each do |y|
 
       y.destroy
     end

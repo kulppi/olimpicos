@@ -98,15 +98,15 @@ class JugadoresController < ApplicationController
     newAuditoria.save
 
 
-    JugadoresEquipo.where('jugadores_equipos.jugadore_id = ?', @jugadore.id).each do |y|
+    JugadoresEquipos.where('jugadores_equipos.jugadore_id = ?', @jugadore.id).each do |y|
 
       y.destroy
     end
-    JugadoresEvento.where('jugadores_eventos.jugadore_id = ?', @jugadore.id).each do |y|
+    JugadoresEventos.where('jugadores_eventos.jugadore_id = ?', @jugadore.id).each do |y|
 
       y.destroy
     end
-    JugadoresDisciplina.where('jugadores_disciplinas.jugadore_id = ?', @jugadore.id).each do |y|
+    JugadoresDisciplinas.where('jugadores_disciplinas.jugadore_id = ?', @jugadore.id).each do |y|
 
       y.destroy
     end
