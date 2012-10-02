@@ -96,7 +96,21 @@ class JugadoresController < ApplicationController
     newAuditoria.usuario =  User.all.first.id
     newAuditoria.clave = @jugadore.id
     newAuditoria.save
-    @jugadore.destroy
+
+
+    JugadoresEquipo.where('jugadores_equipos.jugadore_id = ?', @jugadore.id).each do |y|
+
+      y.destroy
+    end
+    JugadoresEvento.where('jugadores_eventos.jugadore_id = ?', @jugadore.id).each do |y|
+
+      y.destroy
+    end
+    JugadoresDisciplina.where('jugadores_disciplinas.jugadore_id = ?', @jugadore.id).each do |y|
+
+      y.destroy
+    end
+    @jugadore.delete
 
     respond_to do |format|
       format.html { redirect_to jugadores_url }

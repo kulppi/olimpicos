@@ -96,8 +96,13 @@ class DisciplinasController < ApplicationController
     newAuditoria.usuario =  User.all.first.id
     newAuditoria.clave = @disciplina.id
     newAuditoria.save
+
+    JugadoresDisciplina.where('jugadores_disciplinas.disciplina_id = ?', @disciplina.id).each do |y|
+
+      y.destroy
+    end
     
-    @disciplina.destroy
+    @disciplina.delete
 
     respond_to do |format|
       format.html { redirect_to disciplinas_url }

@@ -116,7 +116,17 @@ class EventosController < ApplicationController
     newAuditoria.clave = @evento.id
     newAuditoria.save
 
-    @evento.destroy
+
+    EquipoEvento.where('equipo_eventos.evento_id = ?', @evento.id).each do |y|
+
+      y.destroy
+    end
+    JugadoresEventos.where('jugadores_eventos.evento_id = ?', @evento.id).each do |y|
+
+      y.destroy
+    end
+
+    @evento.delete
 
 
     respond_to do |format|

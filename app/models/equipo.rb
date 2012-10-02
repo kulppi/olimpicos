@@ -8,4 +8,6 @@ class Equipo < ActiveRecord::Base
 
   has_many :eventos, :through => :equipo_eventos
   has_many :equipo_eventos
+
+  
 end
