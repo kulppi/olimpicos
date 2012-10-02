@@ -8,8 +8,6 @@ one:
   password_hash: MyString
   password_salt: MyString
   country_id: 1
-  active: true
   city_id: 1
   gender: 1
   image: MyString
-  active: true
