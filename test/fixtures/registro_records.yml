@@ -2,8 +2,8 @@
 
 one:
 
-  created_at: 2014-09-09 00-00-00
-  updated_at: 2014-09-09 00-00-00
+  created_at: 2014-09-09 00:00:00
+  updated_at: 2014-09-09 00:00:00
   deporte_id: 1
   disciplina_id: 1
   evento_id: 1
@@ -13,8 +13,8 @@ one:
 
 two:
 
-  created_at: 2014-09-09 00-00-00
-  updated_at: 2014-09-09 00-00-00
+  created_at: 2014-09-09 00:00:00
+  updated_at: 2014-09-09 00:00:00
   deporte_id: 1
   disciplina_id: 1
   evento_id: 1

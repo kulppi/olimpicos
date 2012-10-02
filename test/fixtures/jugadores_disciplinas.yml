@@ -2,18 +2,18 @@
 
 one:
 
-  created_at: 2014-09-09 00-00-00
-  updated_at: 2014-09-09 00-00-00
+  created_at: 2014-09-09 00:00:00
+  updated_at: 2014-09-09 00:00:00
   jugadore_id: 1
   disciplina_id: 2
 two:
 
-  created_at: 2014-09-09 00-00-00
-  updated_at: 2014-09-09 00-00-00
+  created_at: 2014-09-09 00:00:00
+  updated_at: 2014-09-09 00:00:00
   jugadore_id: 2
   disciplina_id: 1
 three:
   jugadore_id: 2
   disciplina_id: 1
-  created_at: 2014-09-09 00-00-00
-  updated_at: 2014-09-09 00-00-00
+  created_at: 2014-09-09 00:00:00
+  updated_at: 2014-09-09 00:00:00

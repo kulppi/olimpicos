@@ -2,8 +2,8 @@
 
 one:
 
-  created_at: 2014-09-09 00-00-00
-  updated_at: 2014-09-09 00-00-00
+  created_at: 2014-09-09 00:00:00
+  updated_at: 2014-09-09 00:00:00
   nombre: Nacional
   direccion: cacha
   cordx: 1
@@ -12,8 +12,8 @@ one:
 
 two:
 
-  created_at: 2014-09-09 00-00-00
-  updated_at: 2014-09-09 00-00-00
+  created_at: 2014-09-09 00:00:00
+  updated_at: 2014-09-09 00:00:00
   nombre: manumental
   direccion: dale
   cordx: 1

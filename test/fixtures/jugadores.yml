@@ -2,8 +2,8 @@
 
 one:
 
-  created_at: 2014-09-09 00-00-00
-  updated_at: 2014-09-09 00-00-00
+  created_at: 2014-09-09 00:00:00
+  updated_at: 2014-09-09 00:00:00
   nombre: primero 
   apellido: seg
   fecha_nacimiento: 2012-09-29
@@ -16,8 +16,8 @@ one:
 
 two:
 
-  created_at: 2014-09-09 00-00-00
-  updated_at: 2014-09-09 00-00-00
+  created_at: 2014-09-09 00:00:00
+  updated_at: 2014-09-09 00:00:00
   nombre: hola
   apellido: prueba
   fecha_nacimiento: 2012-09-29

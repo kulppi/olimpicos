@@ -2,8 +2,8 @@
 
 one:
 
-  created_at: 2014-09-09 00-00-00
-  updated_at: 2014-09-09 00-00-00
+  created_at: 2014-09-09 00:00:00
+  updated_at: 2014-09-09 00:00:00
   nombre: manol
   apellido: chile
   fecha_nacimiento: 2012-09-29
@@ -14,8 +14,8 @@ one:
 
 two:
 
-  created_at: 2014-09-09 00-00-00
-  updated_at: 2014-09-09 00-00-00
+  created_at: 2014-09-09 00:00:00
+  updated_at: 2014-09-09 00:00:00
   nombre: alberto 
   apellido: kkoko
   fecha_nacimiento: 2012-09-29
