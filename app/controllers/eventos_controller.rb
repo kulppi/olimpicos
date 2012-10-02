@@ -147,7 +147,7 @@ class EventosController < ApplicationController
     newAuditoria.save
 
     if disciplina.jugadoresPorEquipo == 1
-      je = JugadorEvento.new
+      je = JugadoresEventos.new
       je.jugadore_id = params[:player]
     else
       je = EquipoEvento.new
@@ -199,7 +199,7 @@ class EventosController < ApplicationController
 rr = RegistroRecord.where("deporte_id = ? AND disciplina_id = ?").first_or_create( :evento_id => @evento.id)
       
     if disciplina.jugadoresPorEquipo == 1
-      je = JugadoresEvento.find(params[:id])
+      je = JugadoresEventos.find(params[:id])
       je.marca = params[:marca]
       rr.jugador_id = je.jugadore_id
       
