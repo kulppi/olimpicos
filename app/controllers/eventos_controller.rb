@@ -204,18 +204,17 @@ idMundial  =TipoRecord.where('tipo_records.tipoRecodr = ?','Mundial').first.id
       
     if disciplina.jugadoresPorEquipo == 1
       je = JugadoresEventos.find(params[:id])
-      je.marca = params[:marca]+'.'+params[:format]
       rr.jugador_id = je.jugadore_id
       rrM.jugador_id = je.jugadore_id
       
     else
       je = EquipoEvento.find(params[:id])
-      je.marca = params[:marca]+'.'+params[:format]
       rr.equipo_id = je.equipo_id
       rrM.equipo_id = je.equipo_id
     end
     
-      je.marca = params[:marca]+'.'+params[:format]
+      je.marca = params[:format] ? params[:marca]+'.'+ params[:format] : params[:marca]
+      
     je.save
 
 
