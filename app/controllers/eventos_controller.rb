@@ -256,6 +256,17 @@ class EventosController < ApplicationController
 redirect_to @evento
  end
 
+ def mundial2
+  rr1 = RegistroRecord.new (:tipo_record = 'Olimpico')
+  rr1.save
+
+  rr2 = RegistroRecord.new (:tipo_record = 'Mundial')
+  rr2.save
+@evento = Evento.all.first 
+
+redirect_to @evento
+ end
+
 
 
 end
