@@ -196,6 +196,8 @@ class EventosController < ApplicationController
     newAuditoria.clave = @evento.id
     newAuditoria.save
 
+    a = disciplina.tipo_escala_id
+
       idOlimp  = TipoRecord.where("tipo_record = ?",'Olimpico').first.id
       idMundial  = TipoRecord.where("tipo_record = ?",'Mundial').first.id
 
