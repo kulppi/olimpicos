@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>
+  <b>Tipo:</b>
+  <%= TipoRecord.find(@registro_record.tipo_record_id).tipoRecodr %>
+</p>
+
 <p>
   <b>Deporte:</b>
   <%= @registro_record.deporte_id %>

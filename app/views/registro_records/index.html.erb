@@ -2,6 +2,7 @@
 
 <table class="table">
   <tr>
+    <th>Tipo</th>
     <th>Deporte</th>
     <th>Disciplina</th>
     <th>Evento</th>
@@ -14,6 +15,8 @@
 
 <% @registro_records.each do |registro_record| %>
   <tr>
+
+    <td><%= registro_record.tipo_record_id ? TipoRecord.find(registro_record.tipo_record_id).tipoRecodr : 'no' %></td>
     <td><%= registro_record.deporte_id %></td>
     <td><%= registro_record.disciplina_id %></td>
     <td><%= registro_record.evento_id %></td>

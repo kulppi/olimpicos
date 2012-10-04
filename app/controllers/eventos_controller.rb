@@ -188,7 +188,7 @@ class EventosController < ApplicationController
   def score
     @evento = Evento.find(params[:evento])
     disciplina = Disciplina.find(@evento.disciplina_id)
-    
+
     newAuditoria = Auditoria.new
     newAuditoria.tabla = params[:controller]
     newAuditoria.action = params[:action]
@@ -196,19 +196,26 @@ class EventosController < ApplicationController
     newAuditoria.clave = @evento.id
     newAuditoria.save
 
-rr = RegistroRecord.where("deporte_id = ? AND disciplina_id = ?", disciplina.deporte_id, disciplina.id).first_or_create( :evento_id => @evento.id, :marca => (disciplina.tipo_escala_id == TipoEscala.where('tipo_escala = ?','Asc').first.id ? 0 : 9999999) )
+idOlimp  =TipoRecord.where('tipo_records.tipoRecodr = ?','Olimpico').first.id
+idMundial  =TipoRecord.where('tipo_records.tipoRecodr = ?','Mundial').first.id
+
+    rr = RegistroRecord.where("deporte_id = ? AND disciplina_id = ? AND tipo_record_id = ?", disciplina.deporte_id, disciplina.id , idOlimp).first_or_create( :evento_id => @evento.id, :marca => (disciplina.tipo_escala_id == TipoEscala.where('tipo_escala = ?','Asc').first.id ? 0 : 9999999) )
+    rrM = RegistroRecord.where("deporte_id = ? AND disciplina_id = ? AND tipo_record_id = ?", disciplina.deporte_id, disciplina.id , idMundial).first_or_create( :evento_id => @evento.id, :marca => (disciplina.tipo_escala_id == TipoEscala.where('tipo_escala = ?','Asc').first.id ? 0 : 9999999) )
       
     if disciplina.jugadoresPorEquipo == 1
       je = JugadoresEventos.find(params[:id])
-      je.marca = params[:marca]
+      je.marca = params[:marca]+'.'+params[:format]
       rr.jugador_id = je.jugadore_id
+      rrM.jugador_id = je.jugadore_id
       
     else
       je = EquipoEvento.find(params[:id])
-      je.marca = params[:marca]
+      je.marca = params[:marca]+'.'+params[:format]
       rr.equipo_id = je.equipo_id
+      rrM.equipo_id = je.equipo_id
     end
-    je.marca = params[:marca]
+    
+      je.marca = params[:marca]+'.'+params[:format]
     je.save
 
 
@@ -218,7 +225,16 @@ rr = RegistroRecord.where("deporte_id = ? AND disciplina_id = ?", disciplina.dep
         rr.evento_id = @evento.id
         rr.deporte_id = disciplina.deporte_id
         rr.disciplina_id = disciplina.id
+        rr.tipo_record_id = idOlimp
         rr.save
+      end
+      if rrM.marca.nil?  | ( (je.marca > rrM.marca) & (disciplina.tipo_escala_id == TipoEscala.where('tipo_escalas.tipo_escala = ?','Asc').first.id) )| ((je.marca < rrM.marca) & (disciplina.tipo_escala_id == TipoEscala.where('tipo_escalas.tipo_escala = ?', 'Desc').first.id ) )
+        rrM.marca = je.marca
+        rrM.evento_id = @evento.id
+        rrM.deporte_id = disciplina.deporte_id
+        rrM.disciplina_id = disciplina.id
+        rrM.tipo_record_id = idMundial
+        rrM.save
       end
 
 
