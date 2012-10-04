@@ -51,6 +51,9 @@ match 'eventos/marca/:evento/:id/:marca' => 'eventos#score', :as => 'score_membe
 #auditoria
 match 'auditoria' => 'auditoria#index', :as => 'auditoria'
 
+
+match 'mundial' => 'eventos#mundial', :as => 'mundial'
+
  # match '/jugadoresEquipos/eliminar/:jugadoresEquipos' => 'jugadoresEquipos#destroy'
 
   root :to => 'static#home'
