@@ -1,14 +1,6 @@
 <h1>Listado de jugadores</h1>
 
 
-<% @jugadores.each do |jugadore| %>
-
-<p>
-INSERT INTO Jugadores VALUES (default,' <%=jugadore.apellido %> ','<%=jugadore.nombre%>   ','<%=jugadore.fecha_nacimiento %> ',NULL,  <%=jugadore.altura %> , <%=jugadore.fecha_nacimiento %> ,'Masculino',' <%=jugadore.nacionalidad %> ',(SELECT id FROM Delegaciones WHERE pais=' <%=jugadore.nacionalidad %>  '));
-
-</p>
-<% end %>
-
 <table class="table">
   <tr>
     <th>Nombre</th>
