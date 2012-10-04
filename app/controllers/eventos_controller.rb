@@ -196,8 +196,8 @@ class EventosController < ApplicationController
     newAuditoria.clave = @evento.id
     newAuditoria.save
 
-idOlimp  =TipoRecord.where('tipoRecodr = ?','Olimpico').first.id
-idMundial  =TipoRecord.where('tipoRecodr = ?','Mundial').first.id
+      idOlimp  = TipoRecord.where("tipo_record = ?",'Olimpico').first.id
+      idMundial  = TipoRecord.where("tipo_record = ?",'Mundial').first.id
 
     rr = RegistroRecord.where("deporte_id = ? AND disciplina_id = ? AND tipo_record_id = ?", disciplina.deporte_id, disciplina.id , idOlimp).first_or_create( :evento_id => @evento.id, :marca => (disciplina.tipo_escala_id == TipoEscala.where('tipo_escala = ?','Asc').first.id ? 0 : 9999999) )
     rrM = RegistroRecord.where("deporte_id = ? AND disciplina_id = ? AND tipo_record_id = ?", disciplina.deporte_id, disciplina.id , idMundial).first_or_create( :evento_id => @evento.id, :marca => (disciplina.tipo_escala_id == TipoEscala.where('tipo_escala = ?','Asc').first.id ? 0 : 9999999) )
