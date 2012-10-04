@@ -251,7 +251,9 @@ class EventosController < ApplicationController
   rr2 = RegistroRecord.new
   rr2.tipo_record = 'Mundial'
   rr2.save
+@evento = Evento.all.first 
 
+redirect_to @evento
  end
 
 
