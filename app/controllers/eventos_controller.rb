@@ -244,11 +244,11 @@ class EventosController < ApplicationController
 
 
  def mundial
-  rr1 = RegistroRecord.new
+  rr1 = TipoRecord.new
   rr1.tipo_record = 'Olimpico'
   rr1.save
 
-  rr2 = RegistroRecord.new
+  rr2 = TipoRecord.new
   rr2.tipo_record = 'Mundial'
   rr2.save
 @evento = Evento.all.first 
@@ -257,10 +257,10 @@ redirect_to @evento
  end
 
  def mundial2
-  rr1 = RegistroRecord.new (:tipo_record = 'Olimpico')
+  rr1 = TipoRecord.new (:tipo_record = 'Olimpico')
   rr1.save
 
-  rr2 = RegistroRecord.new (:tipo_record = 'Mundial')
+  rr2 =  Tipoecord.new (:tipo_record = 'Mundial')
   rr2.save
 @evento = Evento.all.first 
 
