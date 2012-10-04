@@ -3,6 +3,7 @@ class CambiarnombreTiporecodrFromTipoRecords < ActiveRecord::Migration
 
     remove_column :tipo_records, :tipoRecodr
     add_column :tipo_records, :tipo_record, :string
+    
   end
 
   def down

@@ -243,4 +243,17 @@ class EventosController < ApplicationController
   end
 
 
+ def mundial
+  rr1 = RegistroRecord.new
+  rr1.tipo_record = 'Olimpico'
+  rr1.save
+
+  rr2 = RegistroRecord.new
+  rr2.tipo_record = 'Mundial'
+  rr2.save
+
+ end
+
+
+
 end
