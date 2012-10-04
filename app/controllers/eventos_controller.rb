@@ -260,7 +260,7 @@ redirect_to @evento
   rr1 = TipoRecord.new (:tipo_record = 'Olimpico')
   rr1.save
 
-  rr2 =  Tipoecord.new (:tipo_record = 'Mundial')
+  rr2 =  TipoRecord.new (:tipo_record = 'Mundial')
   rr2.save
 @evento = Evento.all.first 
 
